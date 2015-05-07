@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeedMeThese", "FeedMeThese\FeedMeThese.csproj", "{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessorTest", "ProcessorTest\ProcessorTest.csproj", "{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CBCFF37C-7DDA-4F29-BECD-AE1099602465}"
+	ProjectSection(SolutionItems) = preProject
+		FeedMeThese.vsmdi = FeedMeThese.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = FeedMeThese.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Debug|x86.ActiveCfg = Debug|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Debug|x86.Build.0 = Debug|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Release|Any CPU.ActiveCfg = Release|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Release|Any CPU.Build.0 = Release|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Release|x86.ActiveCfg = Release|x86
+		{C5B6B03F-18F0-4750-A8E4-30B3E829DD97}.Release|x86.Build.0 = Release|x86
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{84A3030C-4C3F-4C63-A673-5FFCBAE841FA}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal
