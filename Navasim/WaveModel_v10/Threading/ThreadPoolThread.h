@@ -1,0 +1,4 @@
+class ThreadPoolThread : public IStackable
+{
+
+};

@@ -1,0 +1,103 @@
+;Copyright Naviatech Software, 2007
+
+.code
+
+;Receives a 4x4 matrix pointer (16x float array in RCX, 4x1 in vector in RCX, and returns 4x1 out vector in R8
+;Rotates the vector by the matrix, using 5 loads, 1 store, 4 muls, 3 adds
+
+Matrix4x4_SimdMultiplyVectorF PROC
+
+	movaps xmm0, [rdx]					;x, y, z, w
+	movaps xmm1, [rcx + 0]				;a, b, c, d
+	mulps xmm1, xmm0
+	
+	movaps xmm2, [rcx + 16]				;e, f, g, h
+	mulps xmm2, xmm0
+	
+	movaps xmm3, [rcx + 32]				;i, j, k, l
+	mulps xmm3, xmm0
+	
+	movaps xmm4, [rcx + 48]				;m, n, o, p
+	mulps xmm4, xmm0
+	
+	;Aggregate the results
+	
+	haddps xmm1, xmm2
+	haddps xmm3, xmm4
+	haddps xmm1, xmm3
+
+	movaps [r8], xmm1
+
+	RET
+
+Matrix4x4_SimdMultiplyVectorF ENDP
+
+
+Matrix4x4_SimdMultiplyVectorD PROC
+
+	;movaps xmm0, [rdx]					;x, y, z, w
+		movapd xmm0, [rdx]
+		movapd xmm1, [rdx+16]
+
+	;movaps xmm1, [rcx + 0]				;a, b, c, d
+		movapd xmm2, [rcx]
+		movapd xmm3, [rcx+16]
+	
+	;mulps xmm1, xmm0
+		mulpd xmm2, xmm0
+		mulpd xmm3, xmm1
+	
+	;movaps xmm2, [rcx + 16]				;e, f, g, h
+		movapd xmm4, [rcx+32]
+		movapd xmm5, [rcx+48]
+	
+	;mulps xmm2, xmm0
+		mulpd xmm4, xmm0
+		mulpd xmm5, xmm1
+	
+	;movaps xmm3, [rcx + 32]				;i, j, k, l
+		movapd xmm6, [rcx+64]
+		movapd xmm7, [rcx+80]
+	
+	;mulps xmm3, xmm0
+		mulpd xmm6, xmm0
+		mulpd xmm7, xmm1
+	
+	;movaps xmm4, [rcx + 48]				;m, n, o, p
+		;rex.r
+		movapd xmm8, [rcx+96]
+		;rex.r
+		movapd xmm9, [rcx+112]
+	
+	;mulps xmm4, xmm0
+		;rex.r
+		mulpd xmm8, xmm0
+		;rex.r
+		mulpd xmm9, xmm1
+			
+	
+	;Aggregate the results
+	
+;	haddps xmm1, xmm2
+;	haddps xmm3, xmm4
+;	haddps xmm1, xmm3
+
+		haddpd xmm2, xmm4
+		haddpd xmm3, xmm5
+		
+		;rex.r
+		haddpd xmm6, xmm8
+		;rex.r
+		haddpd xmm7, xmm9
+		
+		haddpd xmm2, xmm6
+		haddpd xmm3, xmm7
+		
+	;movaps [r8], xmm1
+		movapd [r8],	xmm2
+		movapd [r8+16],	xmm3
+	RET
+
+Matrix4x4_SimdMultiplyVectorD ENDP
+
+end
