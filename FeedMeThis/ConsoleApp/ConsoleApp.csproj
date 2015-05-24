@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2D18F936-45E5-47D1-B087-3964FC42D0B8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FeedMeThis</RootNamespace>
+    <AssemblyName>fmt</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>FeedMeThis.ConsoleApp</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsoleApp.Instance.cs" />
+    <Compile Include="ConsoleApp.Static.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClientInterfaces\ClientInterfaces.csproj">
+      <Project>{AF08B74D-1724-4EA1-9DB1-74B6C171902E}</Project>
+      <Name>ClientInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Framework.csproj">
+      <Project>{D165389E-8AB9-4CF6-BA4F-9DA41259BBF5}</Project>
+      <Name>Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RuleEngine\RuleEngine.csproj">
+      <Project>{ADAC8AAF-7492-477C-9CD6-D73E1AFE1882}</Project>
+      <Name>RuleEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServerInterfaces\ServerInterfaces.csproj">
+      <Project>{CC3C7DA2-8B89-4117-87C5-0ECD862D1100}</Project>
+      <Name>ServerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OutputFormatters\OutputFormatters.csproj">
+      <Project>{A8F46DA4-ED31-4FBA-B721-9EF12335E992}</Project>
+      <Name>OutputFormatters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestParsers\RequestParsers.csproj">
+      <Project>{3940D860-7DC4-4E53-AF2F-7C80F1309A53}</Project>
+      <Name>RequestParsers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rules\Rules.csproj">
+      <Project>{803651BA-69DC-4DAF-BB64-508878629EE5}</Project>
+      <Name>Rules</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
